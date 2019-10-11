@@ -1,0 +1,33 @@
+* {
+	margin : 0;
+	padding: 0;
+	font-family: 'Abril Fatface', cursive;
+	box-sizing: border-box;
+}
+
+h1 {
+	padding: 30px 50px 20px 50px;
+}
+
+.character {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+}	
+
+#ai {
+	top: 200px;
+	background-image: url("../images/turtle.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#player {
+	top : 400px;
+	background-image: url("../images/dog.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+
+}
