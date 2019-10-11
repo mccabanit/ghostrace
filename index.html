@@ -1,45 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset="UTF-8">
 	<title>jQuery Race</title>
+	<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		
+		<!-- animate css -->
+		<!-- <link rel="stylesheet" type="text/css" href="assets/css/animate.css"> -->
 
-	<!-- google fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
+		<!-- fontawesome icons -->
+		<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> -->
 
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<!-- google fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
+	 
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<!-- <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css"> -->
+		<!-- external css -->
+		<link rel="stylesheet" href="assets/css/style.css">
 
 
-	<!-- external css -->
-	<link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<body class="bg-primary">
+<body>
 
-	<h1 class="display-4 text-center">jQuery Race</h1>
+	<h1 class="text-center">Ghost Race!</h1>
+	<h2 class="text-center">In celebration of the halloween month, we will have a ghost race.</h2>
+	<!-- <p>PS. Beware of ghost(er)s.</p> -->
+	<p></p>
+	<center>
+		<!-- <div class="difficulty">
+		<button class="btn-info" id="easy">Easy</button>
+		<button class="btn-info" id="medium">Medium</button>
+		<button class="btn-info" id="hard">Hard</button>
+		</div> -->
+		<p></p>
+		<p></p>
+		<p></p>
 
-	<button class="btn btn-success mx-auto d-block" id="start"> Start Race </button>
+		<button class="btn btn-info" id="start">Start Race</button>
+		<button class="btn btn-info" id="fast1">Ghost 1 go faster</button>
+		<button class="btn btn-info" id="fast2">Ghost 2 go faster</button>
+		<button class="btn btn-info" id="try">Try again</button>
+	</center>
+<!-- 	<button class="btn btn-info" id="btn2">button 2</button>
+	<button class="btn btn-info" id="btn3">button 3</button>
+ -->
 
-	<input type="text" id="inputBox">
-
-	<button class="btn" id="1">easy</button>
-	<button class="btn" id="2">medium</button>
-	<button class="btn" id="3">hard</button>
-
-	<div class="character" id="player"></div>
-	<div class="character" id="ai"></div>
+	
+	<div class="character" id="player"><img src="assets/images/ghost.gif" width="200" height="100"></div>
+	<div class="character" id="ai"><img src="assets/images/ghost.gif" width="200" height="100"></div>
+	
+	
 
 
-	<!-- jQuery CDN -->
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>	
 
-		<!-- Popper JS -->
+
+	
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!-- CDN jQuery -->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+	<!-- Popper JS -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
+
+	<!-- jQuery local -->
+	<!-- <script src="./assets/js/jquery-3.4.1.min.js"></script> -->
 	<!-- external js -->
 	<script src="./assets/js/script.js"></script>
+
+	<!-- laging pinakahuli dapat ang external js -->
+
 </body>
 </html>
