@@ -18,16 +18,17 @@ let aiPosition = 0;
 const aiMove = (speed) => {
 	if(ai.aiPos < 1000) {
 		ai.character.animate({
-		'left' : (aiPosition += 50) + 'px',
+		'left' : (aiPosition += speed) + 'px',
 		})
 	} else {
-		return true
+		return 
 	}
 	console.log("Ai Position: " + ai.aiPos)
 	ai.aiPos = aiPosition
-	// setTimeout(aiMove, 500)
+	// setTimeout(()=> aiMove(speed), 500)
 	result()
-	if(ai.aiPos >= 1000 || player.playerPos >= 1000) {
+
+	if(ai.aiPos > 1000 || player.playerPos > 1000) {
 		alert("finish line na! wag pagala-gala!")
 		return true
 	}
@@ -40,16 +41,17 @@ const aiMove = (speed) => {
 const playerMove = (speed) => {
 	if(player.playerPos < 1000) {
 		player.character.animate({
-			'left' : (playerPosition += 50) + 'px',
+			'left' : (playerPosition += speed) + 'px',
 		})
 	} else {
-		return true
+		return 
 	}
 	console.log("Player Position: " + player.playerPos)
 	player.playerPos = playerPosition
-	// setTimeout(playerMove, 500)
+	// setTimeout(()=> playerMove(speed), 500)
 	result()
-	if(ai.aiPos >= 1000 || player.playerPos >= 1000) {
+
+	if(ai.aiPos > 1000 || player.playerPos > 1000) {
 		alert("finish line na! wag pagala-gala!")
 		return true
 	}
@@ -58,86 +60,90 @@ const playerMove = (speed) => {
 	}
 }
 
-const result = () => {
-	if(ai.aiPos == 1000) {
-		alert('ghost # 1 won!')
-		player.character.animate({
-			'left' : 1000 + 'px',
-		})
-		return true
-	}
-	if(player.playerPos == 1000) {
-		alert('ghost # 2 won!')
-		ai.character.animate({
-		'left' : 1000 + 'px',
-	})
-		return true
-	}
-}
-
-
-
-
+// START GAME 
 
 
 $(".btn").click(function() {
-	
+	$('.difficulty').show()
+	$("#start").hide()
+	$('.character').fadeIn(1500)
 
-	// if($(this).attr('#easy') ) {
-	// 	aiMove(20)
-	// 	playerMove(20)
-	// }
-
-	// if($(this).attr('#medium') ) {
-	// 	aiMove(30)
-	// 	playerMove(30)
-	// }
-
-	// if($(this).attr('#hard')) {
-	// 	aiMove(80)
-	// 	playerMove(80)
-	// }
-
-	aiMove()
-	playerMove()
-})
-
-
-
-$("#fast1").click(function() {
-	// aiMove()
-	// playerMove()
-		player.character.animate({
-			'left' : (playerPosition += 20) + 'px',
-		})
-})
-
-$("#fast2").click(function() {
-	// aiMove()
-	// playerMove()
-	ai.character.animate({
-		'left' : (aiPosition += 20) + 'px',
+	$("#easy").click(function() {
+		$("#fast1").show()
+		$("#start").hide()
+		$(".difficulty").hide()
+		playerMove(90)
+		aiMove(90)
 	})
+
+	$("#medium").click(function() {
+		$("#fast1").show()
+		$("#start").hide()
+		$(".difficulty").hide()
+		playerMove(75)
+		aiMove(80)
+	})
+
+	$("#hard").click(function() {
+		$("#fast1").show()
+		$("#start").hide()
+		$(".difficulty").hide()
+		playerMove(75)
+		aiMove(85)
+	})
+
 })
 
-$("#try").click(function() {
-	// aiMove()
-	// playerMove()
-	let aiPos = 0;
-	let playerPos = 0;
-	ai.character.animate({
-		'left' : 0 + 'px',
-	})
+
+
+$("#player").click(function() {
+	$(".difficulty").hide()
 
 	player.character.animate({
-		'left' : 0 + 'px',
-	})
+		'left' : (playerPosition += 40) + 'px',
+		})
+	result()
+})
 
-	ai.aiPos = 0;
-	player.playerPos = 0;
 
-	$(".second").click(); 
-    return false;
 
-	
+
+const result = () => {
+	if(ai.aiPos >= 1000) {
+		alert('her enemy pink ghost won!')
+		// $(this).stop()
+		$("#try").show()
+		$(".power").hide()
+		$("#start").hide()
+		$("#fast1").hide()
+		player.character.animate({
+			'left' : 1000 + 'px'
+		})
+		$("#player").fadeOut(1500)
+		return true
+		
+		
+	}
+
+	if(player.playerPos >= 1000) {
+		alert('your baby white ghost won!')
+		$("#try").show()
+		$(".power").hide()
+		$("#start").hide()
+		$("#fast1").hide()
+		// $(this).stop()
+		ai.character.animate({
+			'left' : 1000 + 'px'
+		})
+		$("#ai").fadeOut(1500)
+		return true
+		
+		
+	}
+
+}
+
+
+$("#try").click(function() {
+	$(".difficulty").hide()
 })
